@@ -2,13 +2,11 @@ import streamlit as st
 import nltk
 from nltk.tokenize import word_tokenize
 
-
 nltk.download("punkt", quiet=True)
 try:
     nltk.download("punkt_tab", quiet=True)
 except:
     pass
-
 
 if "chat" not in st.session_state:
     st.session_state.chat = []
@@ -99,7 +97,7 @@ def emotional_engine(user_msg):
         )
 
 
-# -------------------- HEALTH ENGINE  --------------------
+# -------------------- HEALTH ENGINE --------------------
 def health_engine(user_msg):
     text = user_msg.lower()
 
@@ -317,8 +315,8 @@ def generate_response(user_msg):
     )
 
 
-# -------------------- UI --------------------
-st.title("AuraCure — Emotional & Healthcare Support Chatbot ")
+# -------------------- STREAMLIT UI --------------------
+st.title("AuraCure — Emotional & Healthcare Support Chatbot")
 
 # Show previous chat
 for role, msg in st.session_state.chat:
